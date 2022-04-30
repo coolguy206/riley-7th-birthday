@@ -1,0 +1,502 @@
+@import 'font-family.less';
+@margins: 0 0 40px;
+@margins-responsive: 0 0 2.1vw;
+@font-size: 24px;
+@line-height: 48px;
+@font-size-responsive: 1.2vw;
+@line-height-responsive: 2.5vw;
+@font-size-mobile: 5vw;
+@line-height-mobile: 8vw;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+#add-child {
+  @media screen and (max-width: 1920px) {
+    font-size: @font-size-responsive;
+    line-height: @line-height-responsive;
+  }
+  @media screen and (max-width:428px) {
+    font-size: 5vw;
+    line-height: 12vw;
+  }
+  text-decoration: none;
+  font-family: 'ubuntu-regular';
+  text-transform: uppercase;
+  font-size: @font-size;
+  line-height: @line-height;
+  color: #000;
+  // position: relative;
+  &::after {
+    @media screen and (max-width:428px) {
+      width: 63%;
+    }
+    content: '';
+    border-bottom: 2px solid #000;
+    width: 32%;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.desktop {
+  @media screen and (max-width: 428px) {
+    display: none;
+  }
+}
+
+.mobile {
+  @media screen and (max-width: 428px) {
+    display: inline;
+  }
+  display: none;
+}
+
+.sending {
+  display: none;
+
+  img {
+    @media screen and (max-width: 1920px) {
+      width: 22vw;
+    }
+    @media screen and (max-width: 428px) {
+      width: 73vw;
+    }
+    position: relative !important;
+    left: 0 !important;
+    transform: translate(0) !important;
+  }
+}
+
+.gap {
+  @media screen and (max-width: 428px) {
+    margin: 10vw 0 0;
+    gap: 8vw;
+  }
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.outline {
+  border: 2px solid #000;
+  display: inline-flex;
+
+  &.submit {
+    @media screen and (max-width: 1920px) {
+      margin: 3vw 0 0;
+    }
+    @media screen and (max-width:428px) {
+      margin: 10vw 0 0;
+    }
+    margin: 60px 0 0;
+  }
+}
+
+.cta {
+  @media screen and (max-width: 1920px) {
+    font-size: @font-size-responsive;
+    line-height: @line-height-responsive;
+    width: 12.5vw;
+    height: 2.4vw;
+    box-shadow: 0.5vw 0.5vw #00004c;
+  }
+  @media screen and (max-width: 428px) {
+    font-size: 4vw;
+    line-height: 6vw;
+    width: 40vw;
+    height: 11vw;
+    box-shadow: 2vw 2vw #00004c;
+  }
+  width: 240px;
+  height: 45px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right,#fdd600, #df3910);
+  box-shadow: 10px 10px #00004c;
+  color: #000;
+  font-family: 'ubuntu-bold';
+  border: 2px solid #fff;
+  font-size: @font-size;
+  line-height: @line-height;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &.submit {
+    @media screen and (max-width: 1920px) {
+      width: 35vw;
+    }
+    @media screen and (max-width: 428px) {
+      width: 90vw;
+    }
+    width: 650px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: #fff;
+  }
+}
+
+.radiobtn {
+  @media screen and (max-width:1920px) {
+    width: 3vw;
+    height: 3vw;
+  }
+  @media screen and (max-width: 428px) {
+    width: 13vw;
+    height: 13vw;
+  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 56px;
+  width: 56px;
+  border: 2px solid #000;
+
+  &::after {
+    @media screen and (max-width: 1920px) {
+      width: 4.1vw;
+      height: 4.7vw;
+    }
+    @media screen and (max-width:428px) {
+      width: 16vw;
+      height: 16vw;
+      top: -3vw;
+      left: -4vw;
+    }
+    content: '';
+    background: url("../images/little-star.png") no-repeat top left;
+    width: 79px;
+    height: 90px;
+    animation-name: spin;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    display: none;
+    position: absolute;
+    top: -29%;
+    left: -50%;
+    background-size: contain;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wrapper {
+  @media screen and (max-width: 1920px) {
+    padding: 0 0 3vw;
+  }
+  @media screen and (max-width: 428px) {
+    padding: 0 0 10vw;
+  }
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 0 60px;
+
+  header {
+    @media screen and (max-width: 428px) {
+      flex-wrap: wrap;
+    }
+    display: flex;
+
+    div {
+      @media screen and (max-width: 428px) {
+        flex-basis: 100%;
+      }
+      flex-basis: 33%;
+      justify-content: center;
+      text-align: center;
+      background-size: contain;
+      position: relative;
+
+      &.first {
+        @media screen and (max-width: 428px) {
+          order: 2;
+        }
+        background: url("../images/cherry-blossoms1.png") no-repeat top left;
+        background-size: contain;
+
+        .shuriken {
+          @media screen and (max-width: 1920px) {
+            width: 14vw;
+          }
+          @media screen and (max-width: 428px) {
+            width: 34vw;
+          }
+          position: absolute;
+          bottom: 0;
+          left: 6%;
+          animation-name: spin;
+          animation-duration: 10s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+        }
+      }
+
+      &.second {
+        @media screen and (max-width: 428px) {
+          order: 1;
+        }
+        font-family: naruto;
+
+        img {
+          &.title {
+            @media screen and (max-width: 1920px) {
+              width: 30.9vw;
+            }
+            @media screen and (max-width: 428px) {
+              width: 100%;
+            }
+          }
+
+          &.logo {
+            @media screen and (max-width: 1920px) {
+              width: 6.6vw;
+            }
+            @media screen and (max-width: 428px) {
+              width: 29vw;
+            }
+          }
+        }
+
+        p {
+          @media screen and (max-width: 1920px) {
+            font-size: 2vw;
+            line-height: 2.7vw;
+            margin: @margins-responsive;
+          }
+          @media screen and (max-width: 428px) {
+            font-size: 8vw;
+            line-height: 12vw;
+          }
+          margin: @margins;
+          font-size: 36px;
+          line-height: 52px;
+
+          &.no-margin {
+            margin: 0;
+          }
+        }
+      }
+
+      &.third {
+        @media screen and (max-width: 428px) {
+          order: 3;
+          display: none;
+        }
+        background: url("../images/cherry-blossoms2.png") no-repeat top right;
+        background-size: contain;
+      }
+    }
+  }
+
+  section {
+    @media screen and (max-width: 428px) {
+      flex-wrap: wrap;
+      margin: 10vw 0 0;
+    }
+    text-align: center;
+    display: flex;
+    position: relative;
+
+    div {
+      @media screen and (max-width: 428px) {
+        flex-basis: 100% !important;
+      }
+      flex-basis: 33%;
+      position: relative;
+
+      &.first,
+      &.third {
+        @media screen and (max-width: 1920px) {
+          background-size: 8vw;
+        }
+        @media screen and (max-width: 428px) {
+          display: none;
+        }
+        background: url("../images/konoah-logo.png") no-repeat 50% 15%;
+        background-size: 150px;
+      }
+
+      &.second {
+        flex-basis: 60%;
+      }
+
+      img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    h2 {
+      @media screen and (max-width: 1920px) {
+        font-size: 2vw;
+        line-height: 2.5vw;
+        margin: @margins-responsive;
+      }
+      @media screen and (max-width: 428px) {
+        font-size: 6vw;
+        line-height: 8vw;
+      }
+      font-size: 36px;
+      line-height: 48px;
+      font-family: 'ubuntu-bold';
+      margin: @margins;
+
+      &.rsvp {
+        @media screen and (max-width: 1920px) {
+          font-size: 4vw;
+          margin: 4vw 0;
+        }
+        @media screen and (max-width: 428px) {
+          font-size: 18vw;
+          margin: 18vw 0;
+        }
+        font-family: 'naruto';
+        margin: 72px 0;
+        font-size: 72px;
+      }
+    }
+
+    form input,
+    form label,
+    p {
+      @media screen and (max-width: 1920px) {
+        font-size: @font-size-responsive;
+        line-height: @line-height-responsive;
+      }
+      @media screen and (max-width: 428px) {
+        font-size: @font-size-mobile;
+        line-height: @line-height-mobile;
+      }
+      font-size: @font-size;
+      line-height: @line-height;
+      font-family: 'ubuntu-regular';
+      margin: 0;
+    }
+
+    p {
+      @media screen and (max-width: 1920px) {
+        margin: @margins-responsive;
+      }
+      margin: @margins;
+
+      b {
+        font-family: 'ubuntu-bold';
+      }
+    }
+
+    form {
+      div {
+        &.swimmers {
+          .swim-container {
+            @media screen and (max-width: 1920px) {
+              margin: @margins-responsive;
+            }
+            @media screen and (max-width: 428px) {
+              flex-wrap: wrap;
+              margin: 0 0 16vw;
+            }
+            display: flex;
+            gap: 40px;
+            margin: @margins;
+
+            div {
+              @media screen and (max-width: 428px) {
+                display: block;
+                flex-basis: 100%;
+              }
+              flex-basis: 50%;
+              background: none;
+
+              &.first {
+                @media screen and (max-width: 428px) {
+                  text-align: left;
+                  padding: 0 0 0 5vw;
+                }
+                text-align: right;
+              }
+
+              &.second {
+                @media screen and (max-width: 428px) {
+                  padding: 0 0 0 5vw;
+                }
+
+                label {
+                  text-align: left;
+                }
+
+                div {
+                  display: flex;
+
+                  label {
+                    flex-basis: 40%;
+                    text-align: center;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      input,
+      label {
+        display: block;
+      }
+
+      label {
+        text-transform: uppercase;
+        position: relative;
+      }
+
+      input {
+        @media screen and (max-width: 1920px) {
+          width: 18.5vw;
+          height: 3vw;
+        }
+        @media screen and (max-width:428px) {
+          width: 83vw;
+          height: 13vw;
+        }
+        width: 356px;
+        height: 56px;
+        border: 2px solid #000;
+        padding: 0 0 0 2%;
+        display: inline-block;
+
+        &[type="radio"] {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+
+          &:checked ~ .radiobtn::after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
