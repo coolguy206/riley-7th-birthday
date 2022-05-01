@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  console.log(`v0`);
   var count = 2;
   $('#add-child').on('click', function(e) {
     e.preventDefault();
@@ -124,24 +124,24 @@ $(document).ready(function() {
 
     var refreshURL = `https://oauth2.googleapis.com/token?client_id=${clientId}&client_secret=${clientSecret}&refresh_token=${refreshAccessToken}&grant_type=refresh_token`;
 
-    // $.post(refreshURL, function(data) {
-    //   console.log('goole api refresh access token');
-    //   console.log(data);
-    // });
-
-    $.ajax({
-      url: url,
-      method: 'PUT',
-      data: obj,
-      headers: {
-        "Authorization": `OAuth ${accessToken}`,
-      },
-      dataType: 'json',
-      success: function(result) {
-        // Do something with the result
-        console.log(result);
-      }
+    $.post(refreshURL, function(data) {
+      console.log('goole api refresh access token');
+      console.log(data);
     });
+
+    // $.ajax({
+    //   url: url,
+    //   method: 'PUT',
+    //   data: obj,
+    //   headers: {
+    //     "Authorization": `OAuth ${accessToken}`,
+    //   },
+    //   dataType: 'json',
+    //   success: function(result) {
+    //     // Do something with the result
+    //     console.log(result);
+    //   }
+    // });
 
 
   });
