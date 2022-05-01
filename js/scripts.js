@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log(`v1`);
+  console.log(`v2`);
   var count = 2;
   $('#add-child').on('click', function(e) {
     e.preventDefault();
@@ -75,8 +75,8 @@ $(document).ready(function() {
         });
     */
     // .serialize()
-    console.log(arr);
-    console.log(date);
+    // console.log(arr);
+    // console.log(date);
 
     var range = `Sheet1!A1:M1`;
     var rangeURL = encodeURIComponent(range);
@@ -88,8 +88,8 @@ $(document).ready(function() {
     };
 
     obj = JSON.stringify(obj);
-    console.log(typeof obj);
-    console.log(obj);
+    // console.log(typeof obj);
+    // console.log(obj);
 
     // {
     //   "range": "Sheet1!A1:D5",
@@ -103,31 +103,51 @@ $(document).ready(function() {
     //   ],
     // }
 
-    // var x =`https://sheets.googleapis.com/v4/spreadsheets/1UkoueEhKq7ogT9Z557tX_tTHAC1qeLaw0zFo5j3CcMo/values/Sheet1!A1%3AM1?responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED&key=[YOUR_API_KEY] HTTP/1.1`;
 
+    //URL TO GET CODE
+    // https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A//www.googleapis.com/auth/spreadsheets&access_type=offline&include_granted_scopes=true&response_type=code&state=state_parameter_passthrough_value&redirect_uri=https%3A//coolguy206.github.io&client_id=684411187765-8hbqvl6ar7s5gvc1ov882pl5oenitvoc.apps.googleusercontent.com
+
+    //CODE TO GET ACCESS TOKEN
+    // 4/0AX4XfWg2BJzLh40Ob_0jjprbn9QK_YOPoOcohqQ1wCEy8ZUqr9SvAeTyA9yw_cWqa6tyTw
+
+    //URL TO GET ACCESS TOKEN FROM CODE
+    // https://oauth2.googleapis.com/token?code=4/0AX4XfWg2BJzLh40Ob_0jjprbn9QK_YOPoOcohqQ1wCEy8ZUqr9SvAeTyA9yw_cWqa6tyTw&client_id=684411187765-8hbqvl6ar7s5gvc1ov882pl5oenitvoc.apps.googleusercontent.com&client_secret=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&redirect_uri=https%3A//coolguy206.github.io&grant_type=authorization_code
+
+    //ACCESS TOKEN
+    // ya29.A0ARrdaM9lCTGIQRAaTKpzn8RFckupNPpD9MxSHS3VSlKul7HrSmNC2kf7kQ7NzsMthrwA9bCipBEOKKRLlwXCkjZYGT82UUrD6xmn5hcuN-W-8AYiSFrx2p-s9IFiao9IMMM6q_Kt_vqyZ91e9vBfB_sLFlrT
+
+    //REFRESH TOKEN
+    // 1//06qm1K7l2zt1MCgYIARAAGAYSNwF-L9IrUbz90foUtHEnaHbVzUe2Mvt1GttOz8-7enFuL4Eim-cyCpR0xBfIgBe8-_9sTkJ5KZY
+
+    //REFRESH TOKEN POST URL
+    // https: //oauth2.googleapis.com/token?client_id=684411187765-8hbqvl6ar7s5gvc1ov882pl5oenitvoc.apps.googleusercontent.com&client_secret=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&refresh_token=1//06qm1K7l2zt1MCgYIARAAGAYSNwF-L9IrUbz90foUtHEnaHbVzUe2Mvt1GttOz8-7enFuL4Eim-cyCpR0xBfIgBe8-_9sTkJ5KZY&grant_type=refresh_token
+
+    //PUT URL
+    // https://sheets.googleapis.com/v4/spreadsheets/1UkoueEhKq7ogT9Z557tX_tTHAC1qeLaw0zFo5j3CcMo/values/Sheet1!A1%3AM1?key=AIzaSyDFdm54gGbCpuu8rJKAa__QvI1slX8fy0Y&access_token=  ya29.A0ARrdaM9lCTGIQRAaTKpzn8RFckupNPpD9MxSHS3VSlKul7HrSmNC2kf7kQ7NzsMthrwA9bCipBEOKKRLlwXCkjZYGT82UUrD6xmn5hcuN-W-8AYiSFrx2p-s9IFiao9IMMM6q_Kt_vqyZ91e9vBfB_sLFlrT&valueInputOption=USER_ENTERED
 
     console.log(`refresh test`);
 
     var key = `AIzaSyDFdm54gGbCpuu8rJKAa__QvI1slX8fy0Y`;
     var clientId = `684411187765-8hbqvl6ar7s5gvc1ov882pl5oenitvoc.apps.googleusercontent.com`;
-    var accessToken = `ya29.A0ARrdaM87DefLDosqpou4hfh7zjndD6KzRh7fmVJZx6_xJRSvkeQN8OnzvT8dP44I31R0tjLia7jL5G0woR_7JI_hu8ri_Dt68fB3P32wRIzIawefI6wlgTHALllXJdNpOurwFnOSycVJW4Xtxv_dx9ajZdaT`;
-    var refreshAccessToken = `1//048FgkaLzOHsvCgYIARAAGAQSNwF-L9Ir9dPqikHG53A8_kcsx7Zh8iJTpyw7qTM5f0fmI2JwTKwGNse-xS0XFhI8XUqkR0-YlwQ`;
+    var accessToken = `ya29.A0ARrdaM9lCTGIQRAaTKpzn8RFckupNPpD9MxSHS3VSlKul7HrSmNC2kf7kQ7NzsMthrwA9bCipBEOKKRLlwXCkjZYGT82UUrD6xmn5hcuN-W-8AYiSFrx2p-s9IFiao9IMMM6q_Kt_vqyZ91e9vBfB_sLFlrT`;
+    var refreshAccessToken = `1//06qm1K7l2zt1MCgYIARAAGAYSNwF-L9IrUbz90foUtHEnaHbVzUe2Mvt1GttOz8-7enFuL4Eim-cyCpR0xBfIgBe8-_9sTkJ5KZY`;
     var clientSecret = `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`;
     var sheetId = `1UkoueEhKq7ogT9Z557tX_tTHAC1qeLaw0zFo5j3CcMo`;
-    var url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${rangeURL}?access_token=${accessToken}&valueInputOption=USER_ENTERED`;
-    console.log(url);
+
+    // var url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${rangeURL}?access_token=${accessToken}&valueInputOption=USER_ENTERED`;
+    // console.log(url);
 
     // $.post(url, obj, function(data) {
     //   console.log('goole sheets POST');
     //   console.log(data);
     // });
 
-    var refreshURL = `https://oauth2.googleapis.com/token?client_id=${clientId}&client_secret=${clientSecret}&refresh_token=${refreshAccessToken}&grant_type=refresh_token`;
+    // var refreshURL = `https://oauth2.googleapis.com/token?client_id=${clientId}&client_secret=${clientSecret}&refresh_token=${refreshAccessToken}&grant_type=refresh_token`;
 
-    $.post(refreshURL, function(data) {
-      console.log('goole api refresh access token');
-      console.log(data);
-    });
+    // $.post(refreshURL, function(data) {
+    //   console.log('goole api refresh access token');
+    //   console.log(data);
+    // });
 
     // $.ajax({
     //   url: url,
@@ -143,6 +163,45 @@ $(document).ready(function() {
     //   }
     // });
 
+    //GET & REFRESH ACCESS TOKEN
+    $.post(`https://oauth2.googleapis.com/token?client_id=${clientId}&client_secret=${clientSecret}&refresh_token=${refreshAccessToken}&grant_type=refresh_token`, function(data) {
+      console.log(`success access token refreshed`);
+      console.log(data)
+      var theAccessToken = data.access_token;
+
+      //PUT DATA TO GOOGLE SHEET
+      fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${rangeURL}?key=${key}&access_token=${theAccessToken}&valueInputOption=USER_ENTERED`, {
+        method: 'PUT',
+        headers: {
+          "Authorization": `OAuth ${theAccessToken}`
+        },
+        body: obj
+
+      }).then(function(res) {
+        return res.json();
+      }).then(function(data) {
+        console.log(`success your data has been put on google sheets`);
+        console.log(data);
+      });
+
+    });
+
+
+    // CODE THAT FINALLY WORKS!!!
+    /*
+    fetch('https://sheets.googleapis.com/v4/spreadsheets/1UkoueEhKq7ogT9Z557tX_tTHAC1qeLaw0zFo5j3CcMo/values/Sheet1!A1%3AM1?key=AIzaSyDFdm54gGbCpuu8rJKAa__QvI1slX8fy0Y&access_token=  ya29.A0ARrdaM9lCTGIQRAaTKpzn8RFckupNPpD9MxSHS3VSlKul7HrSmNC2kf7kQ7NzsMthrwA9bCipBEOKKRLlwXCkjZYGT82UUrD6xmn5hcuN-W-8AYiSFrx2p-s9IFiao9IMMM6q_Kt_vqyZ91e9vBfB_sLFlrT&valueInputOption=USER_ENTERED', {
+      method: 'PUT',
+      headers: {
+        "Authorization": "OAuth ya29.A0ARrdaM9lCTGIQRAaTKpzn8RFckupNPpD9MxSHS3VSlKul7HrSmNC2kf7kQ7NzsMthrwA9bCipBEOKKRLlwXCkjZYGT82UUrD6xmn5hcuN-W-8AYiSFrx2p-s9IFiao9IMMM6q_Kt_vqyZ91e9vBfB_sLFlrT"
+      },
+      body: JSON.stringify(obj)
+
+    }).then(function(res) {
+      return res.json();
+    }).then(function(data) {
+      console.log(data);
+    });
+    */
 
   });
 
