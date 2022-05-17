@@ -113,19 +113,17 @@ $(document).ready(function() {
     // console.log(obj);
 
     //URL TO GET CODE
-    // https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A//www.googleapis.com/auth/spreadsheets&access_type=offline&include_granted_scopes=true&response_type=code&state=state_parameter_passthrough_value&redirect_uri=https%3A//coolguy206.github.io&client_id=684411187765-8hbqvl6ar7s5gvc1ov882pl5oenitvoc.apps.googleusercontent.com
+    // https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A//www.googleapis.com/auth/spreadsheets&prompt=consent&access_type=offline&response_type=code&redirect_uri=https%3A//coolguy206.github.io&client_id=684411187765-8hbqvl6ar7s5gvc1ov882pl5oenitvoc.apps.googleusercontent.com
 
     //CODE TO GET ACCESS TOKEN
-    // 4/0AX4XfWg2BJzLh40Ob_0jjprbn9QK_YOPoOcohqQ1wCEy8ZUqr9SvAeTyA9yw_cWqa6tyTw
+    // var theCode = `4/0AX4XfWiMuc-C8na8zQ7M6c9pmV5wy_oDqOGxtVqoIEsT4YLmMnSOsXDvf_-sgfdOT-do3A`;
 
     //URL TO GET ACCESS TOKEN FROM CODE
+    // $.post(`https://oauth2.googleapis.com/token?code=${theCode}&client_id=684411187765-8hbqvl6ar7s5gvc1ov882pl5oenitvoc.apps.googleusercontent.com&client_secret=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&redirect_uri=https%3A//coolguy206.github.io&grant_type=authorization_code`, function(data) {
+    //   console.log(data);
+    // });
+
     // https://oauth2.googleapis.com/token?code=4/0AX4XfWhdwYfHym0DfpZJt1av2WIZCpZW2gOvep_WPEDO3t6qXoJclnp_Y2XLk40CV-npBg&client_id=684411187765-8hbqvl6ar7s5gvc1ov882pl5oenitvoc.apps.googleusercontent.com&client_secret=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&redirect_uri=https%3A//coolguy206.github.io&grant_type=authorization_code
-
-    //ACCESS TOKEN
-    // ya29.A0ARrdaM9lCTGIQRAaTKpzn8RFckupNPpD9MxSHS3VSlKul7HrSmNC2kf7kQ7NzsMthrwA9bCipBEOKKRLlwXCkjZYGT82UUrD6xmn5hcuN-W-8AYiSFrx2p-s9IFiao9IMMM6q_Kt_vqyZ91e9vBfB_sLFlrT
-
-    //REFRESH TOKEN
-    // 1//06qm1K7l2zt1MCgYIARAAGAYSNwF-L9IrUbz90foUtHEnaHbVzUe2Mvt1GttOz8-7enFuL4Eim-cyCpR0xBfIgBe8-_9sTkJ5KZY
 
     //REFRESH TOKEN POST URL
     // https: //oauth2.googleapis.com/token?client_id=684411187765-8hbqvl6ar7s5gvc1ov882pl5oenitvoc.apps.googleusercontent.com&client_secret=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&refresh_token=1//06qm1K7l2zt1MCgYIARAAGAYSNwF-L9IrUbz90foUtHEnaHbVzUe2Mvt1GttOz8-7enFuL4Eim-cyCpR0xBfIgBe8-_9sTkJ5KZY&grant_type=refresh_token
@@ -136,8 +134,10 @@ $(document).ready(function() {
     var key = `AIzaSyDFdm54gGbCpuu8rJKAa__QvI1slX8fy0Y`;
     var clientId = `684411187765-8hbqvl6ar7s5gvc1ov882pl5oenitvoc.apps.googleusercontent.com`;
     var accessToken = `ya29.A0ARrdaM9lCTGIQRAaTKpzn8RFckupNPpD9MxSHS3VSlKul7HrSmNC2kf7kQ7NzsMthrwA9bCipBEOKKRLlwXCkjZYGT82UUrD6xmn5hcuN-W-8AYiSFrx2p-s9IFiao9IMMM6q_Kt_vqyZ91e9vBfB_sLFlrT`;
+
     // var refreshAccessToken = ``;
-    var refreshAccessToken = `1//06EU_g70mJf6VCgYIARAAGAYSNwF-L9IrojhZ3Pyn6jqAqsUUsXbLq00CtCT1P5ShIC82_nAYfNo6e0uGxcfy39E8L9BqK1-phGY`;
+    var refreshAccessToken = `1//06AgNsVbWjhZRCgYIARAAGAYSNwF-L9Irb0b-4ZmdYK2bl27MT3yAdX86FL7CvUN4Ic6KiNfiVJv6CCXLwZglvGFUO846Xl32c5A`;
+
     var clientSecret = `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`;
     var sheetId = `1UkoueEhKq7ogT9Z557tX_tTHAC1qeLaw0zFo5j3CcMo`;
 
