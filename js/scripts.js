@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  // console.log(`v4`);
+  // console.log(`v5`);
   var count = 2;
   $('#add-child').on('click', function(e) {
     e.preventDefault();
@@ -121,17 +121,17 @@ $(document).ready(function() {
     var clientSecret = `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`;
 
     var accessToken = `ya29.a0ARrdaM-pajh8Yb-4MUdVo10E0_fkEMc5-oVOvMhal6eVJkkAUOHBHn4d_iFDr03pVUKO_1zo8aSF63bSabeNhp4nPeeJ9j6fF80KPFEOxzdoCqHCQzIU7bC8zx0FCF9_J0vjBgR8wpgbWiThP4yfANiI7ZDO`;
-    var refreshAccessToken = `1//06tYYZ-xESNdTCgYIARAAGAYSNwF-L9IrYoLL3sr8rrTSv0oHnl41lxGSjDFYBbRUugbyizQQALuXS8hb6FHTOfu2CXymo077qsM`;
+    var refreshAccessToken = `1//06m55rV2tCALgCgYIARAAGAYSNwF-L9IrcLXGimUishQaHE9VcrSj8JiOqH3MknUVg7StjGOhN52BQtexKLiob99tDfL45qW0l-0`;
 
     var sheetId = `1UkoueEhKq7ogT9Z557tX_tTHAC1qeLaw0zFo5j3CcMo`;
 
     //CODE TO GET ACCESS TOKEN
-    // var theCode = `4/0AX4XfWgxS7d7bqn_c3a1IgjIQfQHRbhXpghrHcCqWPt-FOtzpIMeUnMw04OBc1TKa2eMrg`;
+    var theCode = `4/0AX4XfWjUIrOKv4rNBegVGCj1zKDa8-3Mn5PW2tvYLm8iqrb-U5MEQmRkhgpouBOKnJtdfg`;
 
     //URL TO GET ACCESS TOKEN FROM CODE
-    // $.post(`https://oauth2.googleapis.com/token?code=${theCode}&client_id=${clientId}&client_secret=${clientSecret}&redirect_uri=https%3A//coolguy206.github.io&grant_type=authorization_code`, function(data) {
-    //   console.log(data);
-    // });
+    $.post(`https://oauth2.googleapis.com/token?code=${theCode}&client_id=${clientId}&client_secret=${clientSecret}&redirect_uri=https%3A//coolguy206.github.io&grant_type=authorization_code`, function(data) {
+      console.log(data);
+    });
 
     //GET & REFRESH ACCESS TOKEN
     $.post(`https://oauth2.googleapis.com/token?client_id=${clientId}&client_secret=${clientSecret}&refresh_token=${refreshAccessToken}&grant_type=refresh_token`, function(data) {
